@@ -81,7 +81,7 @@ section>h2 {
 
 .grid-container {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "greetings photo";
     text-align: center;
@@ -92,7 +92,7 @@ section>h2 {
 #greetings {
     grid-area: greetings;
     text-align: left;
-    margin: auto 15px;
+    margin: auto;
 }
 
 #photo {
@@ -111,19 +111,15 @@ section>h2 {
 }
 
 /*Skills Section*/
-#skills {
-    display: grid
-}
 
 .grid-container2 {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
         "front-end back-end other";
     text-align: center;
     justify-content: center;
     align-items: center;
-    column-gap: 100px;
     flex-grow: 1;
 }
 
@@ -136,6 +132,7 @@ section>h2 {
     width: 300px;
     border-radius: 10px;
     padding: 20px;
+    margin: auto;
 }
 
 .card-container h4 {
@@ -185,9 +182,147 @@ section>h2 {
 }
 
 /*Porfolio Section*/
-.portfolio-container {
-    width: 300px;
-    height: 400px;
+.grid-container3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "starcraft album body-calculator";
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+figcaption {
+    font-size: 25px;
+    color: white;
+}
+
+.portfolio-container a {
+    text-decoration: none;
+}
+
+#starcraft {
+    grid-area: starcraft;
+}
+
+#starcraft img {
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+}
+
+.portfolio-container:hover {
+    position: relative;
+    cursor: pointer;
+    bottom: 10px;
+    color: rgb(14, 223, 70);
+}
+
+#album img {
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+}
+
+#album {
+    grid-area: album;
+}
+
+#body-calculator {
+    grid-area: body-calculator;
+}
+
+/*Contact Section*/
+.grid-container4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "contact-me contact";
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#contact {
+    grid-area: contact;
+}
+
+#contact-me {
+    grid-area: contact-me;
+}
+
+#contact-me h2 {
+    font-size: 30px;
+}
+
+#contact-me ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+#contact-me li {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+#contact-me i {
+    background: transparent;
+    color: gray;
+    font-size: 50px;
+}
+
+#contact-me i:hover {
+    position: relative;
+    bottom: 5px;
+    cursor: pointer;
+    color: rgb(14, 223, 70);
+}
+
+form {
+    text-align: center;
+    display: block;
+}
+
+input {
+    background-color: rgb(72, 71, 71);
+    width: 500px;
+    height: 50px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+#message {
+    height: 100px;
+    width: 500px;
+    padding-left: 5px;
+    border: none;
+    font-size: 20px;
+    background-color: rgb(72, 71, 71);
+    border-radius: 5px;
+    margin: auto;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+button {
+    font-size: 24px;
+    border-radius: 10px;
+    font: bold;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: rgb(14, 223, 70);
 }
 
 /*footer*/
@@ -198,4 +333,67 @@ footer {
     text-align: right;
     margin: 15px 25px 0 0;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .grid-container2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "front-end"
+            "back-end"
+            "other";
+        text-align: center;
+        justify-content: start;
+        align-items: center;
+        flex-grow: 1;
+        row-gap: 20px;
+    }
+
+    .card-container:hover {
+        box-shadow: 1px 1px 25px 1px rgb(14, 223, 70) inset;
+        /*right, down, blur, radius*/
+        position: relative;
+        left: 20px;
+        bottom: 0;
+    }
+
+    .grid-container3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "starcraft"
+            "album"
+            "body-calculator";
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        row-gap: 20px;
+    }
+
+    .grid-container4 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "contact-me"
+            "contact";
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        row-gap: 20px;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    #message {
+        margin: auto;
+    }
+
+    button {
+        margin-top: 20px;
+    }
 }
